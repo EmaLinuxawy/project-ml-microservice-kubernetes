@@ -4,7 +4,8 @@ WORKDIR /app
 
 COPY . ./
 
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && \
+  pip install -r requirements.txt
 
 EXPOSE 80
 
