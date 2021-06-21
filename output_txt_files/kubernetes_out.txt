@@ -1,21 +1,16 @@
+./run_kubernetes.sh
 pod/ml-microservices created
-NAME               READY   STATUS              RESTARTS   AGE
-ml-microservices   0/1     ContainerCreating   0          0s
+NAME               READY   STATUS    RESTARTS   AGE
+ml-microservices   1/1     Running   2          4h10m
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
 
-service/ml-microservices exposed
-|-----------|------------------|-------------|---------------------------|
-| NAMESPACE |       NAME       | TARGET PORT |            URL            |
-|-----------|------------------|-------------|---------------------------|
-| default   | ml-microservices |          80 | http://192.168.49.2:30515 |
-|-----------|------------------|-------------|---------------------------|
-🏃  Starting tunnel for service ml-microservices.
-|-----------|------------------|-------------|------------------------|
-| NAMESPACE |       NAME       | TARGET PORT |          URL           |
-|-----------|------------------|-------------|------------------------|
-| default   | ml-microservices |             | http://127.0.0.1:52818 |
-|-----------|------------------|-------------|------------------------|
-🎉  Opening service default/ml-microservices in default browser...
-❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
-^C✋  Stopping tunnel for service ml-microservices.
+----------------------------------------------------------------
 
-❌  Exiting due to SVC_TUNNEL_STOP: stopping ssh tunnel: os: process already finished
+./make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}

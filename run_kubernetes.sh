@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-dockerpath=ml-microservices
+dockerpath=linuxawy/ml-microservices
 
-kubectl run $dockerpath --image=linuxawy/ml-microservices:latest --port=80
+kubectl run ml-microservices --image=$dockerpath --port=80
 
 
 kubectl get pods
 
-kubectl expose po ml-microservices --type=LoadBalancer --port=80
-minikube service ml-microservices
+kubectl port-forward ml-microservices 8000:80

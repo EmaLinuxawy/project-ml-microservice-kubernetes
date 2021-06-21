@@ -1,54 +1,9 @@
- => [internal] load build definition from Dockerfile                                                                                                                                                                                                                       0.0s
- => => transferring dockerfile: 203B                                                                                                                                                                                                                                       0.0s
- => [internal] load .dockerignore                                                                                                                                                                                                                                          0.0s
- => => transferring context: 2B                                                                                                                                                                                                                                            0.0s
- => [internal] load metadata for docker.io/library/python:3.7.3-stretch                                                                                                                                                                                                    1.1s
- => [auth] library/python:pull token for registry-1.docker.io                                                                                                                                                                                                              0.0s
- => [1/4] FROM docker.io/library/python:3.7.3-stretch@sha256:205cafadbb7f0c48f2a6d655eb100a9675aa85e6e73958860f488406cce09779                                                                                                                                              0.0s
- => [internal] load build context                                                                                                                                                                                                                                          0.0s
- => => transferring context: 10.39kB                                                                                                                                                                                                                                       0.0s
- => CACHED [2/4] WORKDIR /app                                                                                                                                                                                                                                              0.0s
- => [3/4] COPY . ./                                                                                                                                                                                                                                                        0.1s
- => [4/4] RUN pip install pip==21.1.2 &&   pip install -r requirements.txt                                                                                                                                                                                                34.2s
- => exporting to image                                                                                                                                                                                                                                                     2.8s
- => => exporting layers                                                                                                                                                                                                                                                    2.8s
- => => writing image sha256:73cd9a255a65d78c849e60e46f21e7c69f2058d5a7efe40e8cf609a377120e90                                                                                                                                                                               0.0s
- => => naming to docker.io/library/ml-microservices                                                                                                                                                                                                                        0.0s
-
-Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
-REPOSITORY                           TAG                                                     IMAGE ID       CREATED          SIZE
-ml-microservices                     latest                                                  73cd9a255a65   4 seconds ago    1.25GB
-<none>                               <none>                                                  7b4409a6f924   12 minutes ago   1.24GB
-<none>                               <none>                                                  96337da0653d   19 minutes ago   1.24GB
-linuxawy/ml-microservices            latest                                                  3e21d218c53f   50 minutes ago   1.24GB
-<none>                               <none>                                                  3d5ac3055009   51 minutes ago   1.24GB
-gcr.io/k8s-minikube/kicbase          v0.0.23                                                 9fce26cb202e   11 days ago      1.09GB
-front                                latest                                                  5a5c8c4dc129   2 weeks ago      639MB
-<none>                               <none>                                                  38b42a342e37   2 weeks ago      490MB
-docker/desktop-kubernetes            kubernetes-v1.19.7-cni-v0.8.5-critools-v1.17.0-debian   93b3398dbfde   4 months ago     285MB
-k8s.gcr.io/kube-proxy                v1.19.7                                                 9d368f4517bb   5 months ago     118MB
-k8s.gcr.io/kube-controller-manager   v1.19.7                                                 67b3bca112d1   5 months ago     111MB
-k8s.gcr.io/kube-apiserver            v1.19.7                                                 c15e4f843f01   5 months ago     119MB
-k8s.gcr.io/kube-scheduler            v1.19.7                                                 4fa642720eea   5 months ago     45.6MB
-k8s.gcr.io/etcd                      3.4.13-0                                                0369cf4303ff   9 months ago     253MB
-k8s.gcr.io/coredns                   1.7.0                                                   bfe3a36ebd25   12 months ago    45.2MB
-docker/desktop-storage-provisioner   v1.1                                                    e704287ce753   15 months ago    41.8MB
-docker/desktop-vpnkit-controller     v1.0                                                    79da37e5a3aa   15 months ago    36.6MB
-k8s.gcr.io/pause                     3.2                                                     80d28bedfe5d   16 months ago    683kB
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: Do not use the development server in a production environment.
-   Use a production WSGI server instead.
- * Debug mode: on
- * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 813-354-508
- * Detected change in '/app/app.py', reloading
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 813-354-508
- * Detected change in '/app/app.py', reloading
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 813-354-508
+[2021-06-20 23:58:14,084] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2021-06-20 23:58:14,145] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2021-06-20 23:58:14,165] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+127.0.0.1 - - [20/Jun/2021 23:58:14] "POST /predict HTTP/1.1" 200 -
